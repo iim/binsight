@@ -9,6 +9,7 @@
 *.DS_Store
 *.aux
 *.synctex.gz
+App.config
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs

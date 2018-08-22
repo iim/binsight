@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{220A8B96-1C47-4679-A77B-3CAE1E1D5174}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>APKInsight</RootNamespace>
+    <AssemblyName>APKInsight</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <NoWarn>CS0168</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>APKInsight.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <NoWarn>CS0168</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.GLEE">
+      <HintPath>..\..\..\..\libraries\glee\Microsoft.GLEE.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.GLEE.Drawing">
+      <HintPath>..\..\..\..\libraries\glee\Microsoft.GLEE.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.GLEE.GraphViewerGDI">
+      <HintPath>..\..\..\..\libraries\glee\Microsoft.GLEE.GraphViewerGDI.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configs\ApplicationConfiguration.cs" />
+    <Compile Include="Configs\CSettingColours.cs" />
+    <Compile Include="Controls\BinaryObjectDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BinaryObjectDetails.Designer.cs">
+      <DependentUpon>BinaryObjectDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BinaryObjectBinaryView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BinaryObjectBinaryView.Designer.cs">
+      <DependentUpon>BinaryObjectBinaryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BinaryObjectSmaliView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BinaryObjectSmaliView.Designer.cs">
+      <DependentUpon>BinaryObjectSmaliView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DisplayObjects\BioDisplayInfo.cs" />
+    <Compile Include="Controls\DisplayObjects\JavaTypeDisplayInfo.cs" />
+    <Compile Include="Controls\SmaliView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SmaliView.Designer.cs">
+      <DependentUpon>SmaliView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Enums\BinaryObjectProcessingStage.cs" />
+    <Compile Include="Enums\JavaAccessControl.cs" />
+    <Compile Include="Enums\StringValueType.cs" />
+    <Compile Include="Forms\FBinaryDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FBinaryDetails.Designer.cs">
+      <DependentUpon>FBinaryDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FCompressDb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FCompressDb.Designer.cs">
+      <DependentUpon>FCompressDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FDecodeAndUploadApks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FDecodeAndUploadApks.Designer.cs">
+      <DependentUpon>FDecodeAndUploadApks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FDecodeApk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FDecodeApk.Designer.cs">
+      <DependentUpon>FDecodeApk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FGraphView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FGraphView.Designer.cs">
+      <DependentUpon>FGraphView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FLibraries.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FLibraries.Designer.cs">
+      <DependentUpon>FLibraries.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FLibraryAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FLibraryAddEdit.Designer.cs">
+      <DependentUpon>FLibraryAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FMain.Designer.cs">
+      <DependentUpon>FMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FProcessSmaliFiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FProcessSmaliFiles.Designer.cs">
+      <DependentUpon>FProcessSmaliFiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FUploadDirectory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FUploadDirectory.Designer.cs">
+      <DependentUpon>FUploadDirectory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Globals\PathResolver.cs" />
+    <Compile Include="Logic\Analysis\AnalysisLogic.cs" />
+    <Compile Include="Logic\Analysis\AnalysisLogicFindAllUseCases.cs" />
+    <Compile Include="Logic\Analysis\AnalysisLogicDataFlowForCipher.cs" />
+    <Compile Include="Logic\Analysis\AnalysisLogicRule6Ccs13.cs" />
+    <Compile Include="Logic\Analysis\AnalysisLogicRule5Ccs13.cs" />
+    <Compile Include="Logic\Analysis\AnalysisLogicRule4Ccs13.cs" />
+    <Compile Include="Logic\Analysis\AnalysisLogicRule3Ccs13.cs" />
+    <Compile Include="Logic\Analysis\AnalysisLogicRule2Ccs13.cs" />
+    <Compile Include="Logic\Analysis\AnalysisLogicRule1Ccs13.cs" />
+    <Compile Include="Logic\Analysis\AnalysisLogic\AnalysisLogic.BackwardSlicing.cs" />
+    <Compile Include="Logic\Analysis\AnalysisLogic\AnalysisLogic.EntryPointSetup.cs" />
+    <Compile Include="Logic\Analysis\AnalysisLogic\AnalysisLogic.FileContentProcessing.cs" />
+    <Compile Include="Logic\Analysis\AnalysisReport.cs" />
+    <Compile Include="Logic\Analysis\Data\LibraryDefinition.cs" />
+    <Compile Include="Logic\Analysis\Data\ProgramSliceState.cs" />
+    <Compile Include="Logic\Analysis\Data\AnalysisState.cs" />
+    <Compile Include="Logic\Analysis\Data\ApkInfo.cs" />
+    <Compile Include="Logic\Analysis\Data\Reader.cs" />
+    <Compile Include="Logic\Analysis\Data\UseCase.cs" />
+    <Compile Include="Logic\Analysis\Data\UseCaseResult.cs" />
+    <Compile Include="Logic\ContentParsing\JavaObjects\JavaTypeBaseInfo.cs" />
+    <Compile Include="Logic\ContentParsing\JavaObjects\JavaTypeFieldAccessors.cs" />
+    <Compile Include="Logic\ContentParsing\JavaObjects\JavaTypeInvokedMethod.cs" />
+    <Compile Include="Logic\ControlFlowGraph\CfgInstruction.cs" />
+    <Compile Include="Logic\ControlFlowGraph\Specific\ESmaliInstruction.cs" />
+    <Compile Include="Logic\ContentParsing\SmaliParser\SmaliParserICfgParser.cs" />
+    <Compile Include="Logic\ContentParsing\SmaliParser\SmaliParserMethod.cs" />
+    <Compile Include="Logic\ContentParsing\SmaliParser\SmaliParserRegEx.cs" />
+    <Compile Include="Logic\ContentParsing\SmaliParser\SmaliParserUtils.cs" />
+    <Compile Include="Logic\ControlFlowGraph\Cfg.cs" />
+    <Compile Include="Logic\ControlFlowGraph\CfgVertext.cs" />
+    <Compile Include="Logic\ControlFlowGraph\ICfgParser.cs" />
+    <Compile Include="Logic\ControlFlowGraph\Specific\SmaliCfgInstruction.cs" />
+    <Compile Include="Logic\PipelineTasks\TaskDecodeApkFiles.cs" />
+    <Compile Include="Logic\PipelineTasks\TaskProcessSmaliFilesSavingSeparateParts.cs" />
+    <Compile Include="Logic\PipelineTasks\TaskProcessSmaliFilesMainProcessingLoop.cs" />
+    <Compile Include="Logic\PipelineTasks\TaskProcessSmaliFiles.cs" />
+    <Compile Include="Logic\DecodeApk.cs" />
+    <Compile Include="Logic\ContentParsing\JavaObjects\JavaType.cs" />
+    <Compile Include="Logic\ContentParsing\JavaObjects\JavaTypeField.cs" />
+    <Compile Include="Logic\ContentParsing\JavaObjects\JavaTypeMethod.cs" />
+    <Compile Include="Logic\ContentParsing\SmaliParser\SmaliParser.cs" />
+    <Compile Include="Logic\PipelineTasks\TaskUploadInternalFiles.cs" />
+    <Compile Include="Logic\StringValueUtils.cs" />
+    <Compile Include="Logic\UploadAPK.cs" />
+    <Compile Include="Models\Custom\BinaryObjectWithContentJavaTypeId.cs" />
+    <Compile Include="Models\Custom\BinaryObjectWithContent.cs" />
+    <Compile Include="Models\Custom\ApplicationCategoryWithCount.cs" />
+    <Compile Include="Models\Custom\GrouppedStringValue.cs" />
+    <Compile Include="Models\Custom\JavaTypeUsedInTypeExtended.cs" />
+    <Compile Include="Models\Custom\LibraryCandidate.cs" />
+    <Compile Include="Models\DataBase\ApplicationCategory.cs" />
+    <Compile Include="Models\Custom\JavaTypeInternals.cs" />
+    <Compile Include="Models\DataBase\JavaTypeField.cs" />
+    <Compile Include="Models\DataBase\JavaTypeUsedInType.cs" />
+    <Compile Include="Models\DataBase\Library.cs" />
+    <Compile Include="Models\DataBase\LibraryPropertyType.cs" />
+    <Compile Include="Models\DataBase\LibraryProperties.cs" />
+    <Compile Include="Models\DataBase\LibraryAliases.cs" />
+    <Compile Include="Models\DataBase\StringValue.cs" />
+    <Compile Include="Models\DataBase\EnumOption.cs" />
+    <Compile Include="Models\DataBase\DataSet.cs" />
+    <Compile Include="Models\DataBase\BinaryObject.cs" />
+    <Compile Include="Models\DataBase\BinaryObjectContent.cs" />
+    <Compile Include="Models\DataBase\BinaryObjectPath.cs" />
+    <Compile Include="Models\DataBase\JavaType.cs" />
+    <Compile Include="Models\DataBase\JavaTypeMethod.cs" />
+    <Compile Include="Models\DataBase\JavaTypeImplementedInterface.cs" />
+    <Compile Include="Models\DataBase\JavaTypePath.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\QueryApplicationCategories.cs" />
+    <Compile Include="Queries\QueryJavaTypeUsedInType.cs" />
+    <Compile Include="Queries\QueryLibrary.cs" />
+    <Compile Include="Queries\QueryStringValue.cs" />
+    <Compile Include="Queries\QueryBinaryObject.cs" />
+    <Compile Include="Queries\QueryBinaryObjectContent.cs" />
+    <Compile Include="Queries\QueryBinaryObjectPath.cs" />
+    <Compile Include="Queries\QueryDataSet.cs" />
+    <Compile Include="Queries\QueryJavaTypeMethod.cs" />
+    <Compile Include="Queries\QueryJavaType.cs" />
+    <Compile Include="Syntaxis\Smali2RtfFormatter.cs" />
+    <EmbeddedResource Include="Controls\BinaryObjectDetails.resx">
+      <DependentUpon>BinaryObjectDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\BinaryObjectBinaryView.resx">
+      <DependentUpon>BinaryObjectBinaryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\BinaryObjectSmaliView.resx">
+      <DependentUpon>BinaryObjectSmaliView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SmaliView.resx">
+      <DependentUpon>SmaliView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FBinaryDetails.resx">
+      <DependentUpon>FBinaryDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FCompressDb.resx">
+      <DependentUpon>FCompressDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FDecodeAndUploadApks.resx">
+      <DependentUpon>FDecodeAndUploadApks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FDecodeApk.resx">
+      <DependentUpon>FDecodeApk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FGraphView.resx">
+      <DependentUpon>FGraphView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FLibraries.resx">
+      <DependentUpon>FLibraries.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FLibraryAddEdit.resx">
+      <DependentUpon>FLibraryAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FMain.resx">
+      <DependentUpon>FMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FProcessSmaliFiles.resx">
+      <DependentUpon>FProcessSmaliFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FUploadDirectory.resx">
+      <DependentUpon>FUploadDirectory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Compile Include="Logic\Analysis\AnalysisLogic\AnalysisLogic.VertextCache.cs" />
+    <Compile Include="Logic\Analysis\AnalysisLogic\AnalysisLogic.ForwardSlicing.cs" />
+    <None Include="_App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gears.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dna-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CsnowFramework\_CsnowFramework.csproj">
+      <Project>{ba2dd44c-8148-4547-859d-99dea0ca834e}</Project>
+      <Name>_CsnowFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
