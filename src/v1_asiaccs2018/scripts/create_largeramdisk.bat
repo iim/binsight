@@ -1,0 +1,1 @@
+imdisk -a -s 24G -m T: -p "/fs:ntfs /q /y"
