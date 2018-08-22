@@ -36,3 +36,15 @@ There are several libraries and components that one need to install, in order to
 6. Modify App.config file and provide details for connection to BinSight and BinSightBoc databases.
 7. Provide path for the apktool directory.
 8. Specify where you want your apk files to be disassembled to for during import.
+9. You might be required to install MS GLEE library. I've included the DLL directly into this repo, but if you need to install it, you can find it here:
+   https://www.microsoft.com/en-us/research/project/microsoft-automatic-graph-layout/
+10. Open BinSight.sln file with Visual Studio, build and run. By now you should be able to run the app as we were running it during our analysis (presented in
+    Asia CCS 2018 Paper: https://dl.acm.org/citation.cfm?id=3196494.3196538
+
+Other notes:
+- I am refactoring code, to make database fully optional and to clean up stuff, so stay tuned. I will, however, keep v1\_asiaccs2018 code directory as-is, so
+  that results from 2018 can be reproduced.
+- If you have a question on how to use it (and you will) send me an email at ildarm at ECE period UBC dot CA. I will try to answer as soon as I can.
+- If you have an issue, just create an issue (if it is a bug, please post steps to reproduce it)
+- If you happen to use this project for your research, we would like to ask you to reference Asia CCS 2018 paper.
+- Have fun hacking :) 
