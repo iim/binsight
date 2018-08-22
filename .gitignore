@@ -10,6 +10,7 @@
 *.aux
 *.synctex.gz
 App.config
+apktool.jar
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
